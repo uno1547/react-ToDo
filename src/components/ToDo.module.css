@@ -1,0 +1,27 @@
+.todo {
+  /* width: 320px; */
+  width: 500px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 5px;
+}
+
+.todo > span {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.todo > div button {
+  border: 0;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  transition: .7s;
+  cursor: pointer;
+}
+
+.todo > div button:hover {
+  background-color: rgb(155, 155, 155);
+}

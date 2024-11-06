@@ -1,0 +1,36 @@
+.date_area {
+  display: flex;
+  justify-content:space-between;
+  border-bottom: 1px solid black;
+}
+
+.date_area span {
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+}
+.bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.date_area > div {
+  display: flex;
+  padding: 10px 5px;
+}
+
+/* YY MM DD */
+.date_main {
+
+}
+
+.date_main .vert{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+/* 요일 및 날씨 */
+.date_sub {
+  font-size: 10px;
+}
