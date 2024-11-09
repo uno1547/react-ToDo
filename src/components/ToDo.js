@@ -11,8 +11,8 @@ function ToDo({ text, isDone }) {
   // }, [isDone])
   // console.log(`${text}의 props의 isDone`, isDone);
   // console.log(`${text}의 state`, done);
-  const clickHandler = (evt) => {
-    console.log('clicked!!');
+  const handler = (evt) => {
+    console.log('evt!!');
     setDone(!done)
     // console.log(evt.currentTarget)
     // setDone(!done)
@@ -24,9 +24,9 @@ function ToDo({ text, isDone }) {
   }
   return (
     <>
-      <li className = {style.todo} onClick={clickHandler}>
-        <input type = "checkbox" checked = {done} readOnly></input>
-        <span>{text} {done ? "완료" : "미완료"}</span>
+      <li className = {style.todo}>
+        <input type = "checkbox" checked = {done} onChange = {handler}></input>
+        <span onClick={handler}>{text}</span>
         <div>
           <button>수정</button>
           <button>휴지통</button>
