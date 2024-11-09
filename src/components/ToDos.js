@@ -27,7 +27,7 @@ function ToDos({ setModal }) {
     setToDos(prev => [...prev, toDo]) // push
   }
   // console.log(toDos);
-  // console.log('todos 랜더링!!'); // toDo가 바뀔때마다 랜더링이 다시된다!!
+  console.log('todos 랜더링!!'); // toDo가 바뀔때마다 랜더링이 다시된다!!
   return (
     <div className={style.todos}>
       <form className={style.form} onSubmit={submitHandler}>
@@ -37,7 +37,8 @@ function ToDos({ setModal }) {
       <ul>
         {toDos.map((todo, idx) => {
           // console.log(`${todo.text}${todo.isDone}${idx}`);
-          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} setModal = {setModal}/>
+          // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} setModal = {setModal}/>
+          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id}/>
           // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.text}/>
         })}
         {

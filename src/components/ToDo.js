@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 import style from "./ToDo.module.css"
+import Modal from "./Modal";
 
-function ToDo({ text, isDone, setModal }) {
-  console.log('todo 랜더링');
-  // console.log(text, isDone);
+function ToDo({ text, isDone }) {
+  // console.log('todo 랜더링');
+
+  const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(isDone)
-  console.log('새로 랜더링된 state값', done);
+  // console.log('새로 랜더링된 state값', done);
   // useEffect(() => {
   //   setDone(isDone)
   // }, [isDone])
-  // console.log(`${text}의 props의 isDone`, isDone);
-  // console.log(`${text}의 state`, done);
   const handler = (evt) => {
     console.log('evt!!');
     setDone(!done)
-    // console.log(evt.currentTarget)
-    // setDone(!done)
     /*
     // const checkbox = evt.currentTarget.querySelector("input")
       클릭하면 체크박스가 체크되게 하고, 이후에 데이터 처리
@@ -24,7 +22,7 @@ function ToDo({ text, isDone, setModal }) {
   }
 
   const modalHandler = () => {
-    setModal(prev => !prev)
+    setModalOpen(prev => !prev)
   }
   return (
     <>
@@ -36,6 +34,7 @@ function ToDo({ text, isDone, setModal }) {
           <button>휴지통</button>
         </div>
       </li>
+      {modalOpen ? <Modal setModal={setModalOpen} todo = {text}/> : null}
     </>
   )
 }
