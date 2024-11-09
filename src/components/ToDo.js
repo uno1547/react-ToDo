@@ -34,7 +34,7 @@ function ToDo({ text, isDone }) {
           <button>휴지통</button>
         </div>
       </li>
-      {modalOpen ? <Modal setModal={setModalOpen} todo = {text}/> : null}
+      {modalOpen ? <Modal setModal={modalHandler} todo = {text}/> : null}
     </>
   )
 }
