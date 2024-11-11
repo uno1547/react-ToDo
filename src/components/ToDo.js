@@ -3,8 +3,9 @@ import style from "./ToDo.module.css"
 import Modal from "./Modal";
 
 import {updateTodo, toggleTodo} from "../utils/updateTodo";
+import deleteTodo from "../utils/deleteTodo";
 
-function ToDo({ text, isDone, id }) {
+function ToDo({ text, isDone, id , fetchTodo}) {
   // console.log('todo 랜더링');
   const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(isDone)
@@ -26,6 +27,11 @@ function ToDo({ text, isDone, id }) {
   const modalHandler = () => {
     setModalOpen(prev => !prev)
   }
+
+  const deleteHandler = () => {
+    deleteTodo(id)
+    fetchTodo()
+  }
   return (
     <>
       <li className = {style.todo}>
@@ -33,10 +39,10 @@ function ToDo({ text, isDone, id }) {
         <span onClick={handler}>{text}</span>
         <div>
           <button onClick={modalHandler}>수정</button>
-          <button>휴지통</button>
+          <button onClick={deleteHandler}>휴지통</button>
         </div>
       </li>
-      {modalOpen ? <Modal setModal={modalHandler} todo = {text}/> : null}
+      {modalOpen ? <Modal setModal={modalHandler} todo = {text} updateTodo = {updateTodo} id={id} fetchTodo ={fetchTodo}/> : null}
     </>
   )
 }

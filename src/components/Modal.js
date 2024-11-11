@@ -1,13 +1,16 @@
 import { useState } from "react";
 import style from "./Modal.module.css"
 
-function Modal({ setModal, todo }) {
+function Modal({id, setModal, todo, updateTodo, fetchTodo }) {
   const [content, setContent] = useState(todo)
 
   const submitHandler = (evt) => {
     console.log('submit');
     console.log(content);
     evt.preventDefault()
+    updateTodo(id, content)
+    setModal()
+    fetchTodo()
   }
   // const modalHandler = () => {
   //   setModal(prev => !prev)

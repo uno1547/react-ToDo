@@ -44,7 +44,7 @@ function ToDos() {
         {toDos.map((todo) => {
           // console.log(`${todo.text}${todo.isDone}${idx}`);
           // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} setModal = {setModal}/>
-          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} id = {todo.id}/>
+          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} id = {todo.id} fetchTodo ={fetchTodo}/>
           // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.text}/>
         })}
       </ul>   
