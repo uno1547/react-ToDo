@@ -6,7 +6,7 @@ function DateComponent() {
   const date = new Date()
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const weekDays = [ 'SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
-  console.log('date 컴포넌트 랜더링!!');
+  // console.log('date 컴포넌트 랜더링!!');
   return (
     <div className = {style.date_area}>
       <div className = {style.date_main}>

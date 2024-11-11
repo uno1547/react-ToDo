@@ -1,37 +1,43 @@
 import { useState, useEffect } from "react";
 import style from "./ToDos.module.css";
 import ToDo from "./ToDo";
+import getTodo from "../utils/getTodo";
+import createTodo from "../utils/createTodo";
 
-function ToDos({ setModal }) {
-  const [toDo, setToDo] = useState() // 
-  // const [cnt, setCnt] = useState(0)
-  const [toDos, setToDos] = useState([
-    // 데이터의 id는 고유하게 정해진다고 가정!! 이건 별도로 처리가 필요할듯함 global에 index를 주거나, 데이터 생성시에 고유값을 설정하던가
-    { id : "첫번째", text : "첫번째", isDone : false},
-    { id : "두번째", text : "두번째", isDone : false},
-    { id : "세번째", text : "세번째", isDone : true}
-  ])
-  // console.log(modalHandler);
+function ToDos() {
+  const [toDo, setToDo] = useState("")
+  const [toDos, setToDos] = useState([])
+  console.log('ToDos생성!');
+
+  const fetchTodo = async () => {
+    const response = await getTodo()
+    setToDos(prev => [...response])
+  }
+  
+  useEffect(() => {
+      fetchTodo()
+  }, [])
+    
+  console.log(toDos);
   const changeHandler = (evt) => {
-    // console.log(evt.target);
-    setToDo({id : evt.target.value, text : evt.target.value, isDone : false}) // 이때 state가 변하긴하지만 아래 콘솔이찍히고 나서야 랜더링이 다시되기때문에 콘솔에선 변한 state를 볼수없는것??
-    // console.log(toDo); // state를 찍는것은 볼수없다?
+    setToDo(evt.target.value) // 이때 state가 변하긴하지만 아래 콘솔이찍히고 나서야 랜더링이 다시되기때문에 콘솔에선 변한 state를 볼수없는것??
   }
 
   const submitHandler = (evt) => {
-    // console.log('submit');
     evt.preventDefault()
     if(!toDo) return
-    // console.log([toDo, ...toDos]);
+    console.log(toDo);
+    createTodo(toDo)
+    fetchTodo() //여기서 갱신된 데이터 한번 더 불러와서 리랜더링이 일어날듯??
+    setToDo("") // 입력창 초기화
     // setToDos(prev => [toDo, ...toDos]) // shift
-    setToDos(prev => [...prev, toDo]) // push
+    // setToDos(prev => [...prev, toDo]) // push
   }
-  // console.log(toDos);
-  console.log('todos 랜더링!!'); // toDo가 바뀔때마다 랜더링이 다시된다!!
+
   return (
     <div className={style.todos}>
       <form className={style.form} onSubmit={submitHandler}>
-        <input placeholder="할일을 입력하세요" onChange={changeHandler}></input>
+        <input placeholder="할일을 입력하세요" onChange={changeHandler} value={toDo}></input>
         <button type="submit">추가</button>
       </form>
       <ul>
