@@ -41,14 +41,12 @@ function ToDos() {
         <button type="submit">추가</button>
       </form>
       <ul>
-        {toDos.map((todo, idx) => {
+        {toDos.map((todo) => {
           // console.log(`${todo.text}${todo.isDone}${idx}`);
           // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} setModal = {setModal}/>
-          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id}/>
+          return <ToDo text={todo.text} isDone={todo.isDone} key={todo.id} id = {todo.id}/>
           // return <ToDo text={todo.text} isDone={todo.isDone} key={todo.text}/>
         })}
-        {
-        }
       </ul>   
     </div>
   )

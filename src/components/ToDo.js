@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import style from "./ToDo.module.css"
 import Modal from "./Modal";
 
-function ToDo({ text, isDone }) {
-  // console.log('todo 랜더링');
+import {updateTodo, toggleTodo} from "../utils/updateTodo";
 
+function ToDo({ text, isDone, id }) {
+  // console.log('todo 랜더링');
   const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(isDone)
+  // console.log(id);
   // console.log('새로 랜더링된 state값', done);
   // useEffect(() => {
   //   setDone(isDone)
   // }, [isDone])
   const handler = (evt) => {
-    console.log('evt!!');
+    toggleTodo(id, done)
     setDone(!done)
     /*
     // const checkbox = evt.currentTarget.querySelector("input")
