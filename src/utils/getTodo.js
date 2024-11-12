@@ -1,13 +1,12 @@
 import db from "./firebase"
-import {collection, getDocs} from "firebase/firestore"
+import {collection, getDocs, query, orderBy} from "firebase/firestore"
 
 const getTodo = async () => {
-  const toDos = []
-  const querySnapshot = await getDocs(collection(db, "todo"))
-  querySnapshot.forEach(doc => {
-    toDos.push(doc.data())
-  })
-  return toDos // 모두 담아서 반환
+  // const toDos = []
+  const todo = collection(db, "todo")
+  const result = await getDocs(query(todo, orderBy("time", "asc")))
+  const boards = result.docs.map((el) => el.data());
+  return boards
 }
 
 export default getTodo

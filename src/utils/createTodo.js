@@ -34,7 +34,8 @@ const createTodo = async (text) => {
   await setDoc(docRef3, {
     text : text,
     id : docRef3["_key"].path.segments[1],
-    isDone : false
+    isDone : false,
+    time : new Date()
   })
 }
 

@@ -6,6 +6,10 @@
   /* background-color: yellow; */
 }
 
+.center {
+  text-align: center;
+}
+
 .todos > .form {
   display: flex;
   justify-content: center;
@@ -33,3 +37,4 @@
   /* display: flex; */
   /* justify-content: center; */
 }
+

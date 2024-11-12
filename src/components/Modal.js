@@ -5,16 +5,14 @@ function Modal({id, setModal, todo, updateTodo, fetchTodo }) {
   const [content, setContent] = useState(todo)
 
   const submitHandler = (evt) => {
-    console.log('submit');
-    console.log(content);
+    // console.log('submit');
+    // console.log(content);
     evt.preventDefault()
     updateTodo(id, content)
     setModal()
     fetchTodo()
   }
-  // const modalHandler = () => {
-  //   setModal(prev => !prev)
-  // }
+
   const changeHandler = (evt) => {
     setContent(evt.target.value)
     console.log(evt.target.value);
