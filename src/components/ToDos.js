@@ -10,9 +10,8 @@ import style from "./ToDos.module.css";
 function ToDos() {
   const [toDo, setToDo] = useState("")
   const [toDos, setToDos] = useState([])
-
   const [loading, setLoading] = useState(true)
-  // console.log('ToDos컴포넌트!');
+  console.log('ToDos 컴포넌트!');
 
   const fetchTodo = async () => {
     const response = await getTodo()

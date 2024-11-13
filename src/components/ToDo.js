@@ -7,13 +7,13 @@ import {updateTodo, toggleTodo} from "../utils/updateTodo";
 import deleteTodo from "../utils/deleteTodo";
 
 function ToDo({ id, text, isDone , fetchTodo}) {
-  // console.log('ToDo컴포넌트!');
+  console.log('ToDo li 컴포넌트!');
   const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(isDone)
 
   const handler = () => {
     toggleTodo(id, done)
-    setDone(!done)
+    setDone(!done) //얘는 ToDo의 done자체로 혼자만 rerender ?실행여부만 바뀌는거라 ToDos전체가 다시 조회될필요는 없나? ToDo만 
   }
 
   const modalHandler = () => {
@@ -22,7 +22,7 @@ function ToDo({ id, text, isDone , fetchTodo}) {
 
   const deleteHandler = () => {
     deleteTodo(id)
-    fetchTodo()
+    fetchTodo() // 삭제 > 전체 ToDos리스트 다시 조회되야함
   }
   return (
     <>

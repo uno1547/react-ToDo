@@ -16,6 +16,7 @@
 }
 
 .todos > .form input {
+  outline: none;
   width: 250px;
   margin-right: 5px;
   padding: 5px;
