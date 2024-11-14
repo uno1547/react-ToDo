@@ -4,11 +4,11 @@
 - react사용, db는 firebase의 firestore 사용
 
 
-  - 홈화면(할일X)
+- 홈화면(할일X)
 <img width="1393" alt="스크린샷 2024-11-14 오후 8 35 49" src="https://github.com/user-attachments/assets/9729f852-c044-489f-9fff-e90fd32a50f8">
-  - 홈화면(할일O)
+- 홈화면(할일O)
 <img width="1392" alt="스크린샷 2024-11-14 오후 8 38 02" src="https://github.com/user-attachments/assets/ce4b5b2b-af55-43f1-a656-032df40a5d0e">
-  - 모달창
+- 모달창
 <img width="1394" alt="스크린샷 2024-11-14 오후 8 38 18" src="https://github.com/user-attachments/assets/60e5f2ac-1138-4482-a91e-5d7a987e55ec">
 # 실행방법
 - react에 필요한 파일다운
