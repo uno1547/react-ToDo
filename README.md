@@ -2,6 +2,8 @@
 - 처음 공부한 react로 간단한 ToDoList 제작
 - 할일 추가, 조회, 수정, 삭제 간단기능 구현
 - react사용, db는 firebase의 firestore 사용
+
+
   - 홈화면(할일X)
 <img width="1393" alt="스크린샷 2024-11-14 오후 8 35 49" src="https://github.com/user-attachments/assets/9729f852-c044-489f-9fff-e90fd32a50f8">
   - 홈화면(할일O)
