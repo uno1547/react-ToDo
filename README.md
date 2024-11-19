@@ -10,6 +10,7 @@
 <img width="1392" alt="스크린샷 2024-11-14 오후 8 38 02" src="https://github.com/user-attachments/assets/ce4b5b2b-af55-43f1-a656-032df40a5d0e">
 - 모달창
 <img width="1394" alt="스크린샷 2024-11-14 오후 8 38 18" src="https://github.com/user-attachments/assets/60e5f2ac-1138-4482-a91e-5d7a987e55ec">
+
 # 실행방법
 - react에 필요한 파일다운
 ```
